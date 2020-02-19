@@ -1,0 +1,40 @@
+﻿@model List<Massage>
+
+@{
+    ViewData["Title"] = "GetMassages";
+}
+
+
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>User Id</th>
+            <th>Time of Creation</th>
+            <th>Massage</th>
+        </tr>
+
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @item.UserId
+                </td>
+                <td>
+                    @item.TimeOfCreation
+                </td>
+                <td>
+                    @item.Text
+                </td>
+
+            </tr>
+        }
+    </tbody>
+</table>
+<td>
+    @Html.ActionLink("Sort by date", "GetMassagesSortedByDate")
+    @Html.ActionLink("Sort by Id", "GetMassagesSortedById")
+</td>

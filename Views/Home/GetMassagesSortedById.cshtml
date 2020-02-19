@@ -1,0 +1,46 @@
+﻿@model IEnumerable<TestApplicationForVR.Models.Massage>
+
+@{
+    ViewData["Title"] = "GetMassagesSortedById";
+}
+
+
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                User Id
+            </th>
+            <th>
+                Time of Creation
+            </th>
+            <th>
+               Massage
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TimeOfCreation)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Text)
+                </td>
+
+            </tr>
+        }
+    </tbody>
+</table>
+<td>
+    @Html.ActionLink("Sort by date", "GetMassagesSortedByDate") |
+
+</td>
